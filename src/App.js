@@ -4,17 +4,19 @@ import context from './core/context';
 import SampleService from './services/sample';
 import SimpleButton from './components/simpleButton';
 import toDoInput from './components/toDoInput.js';
+import Todo from './components/Todo.js';
 
 const App = () => {
 	useEffect(SampleService.sayHai, []);
-
+	// eslint-disable-next-line no-console
+	console.log(context.state.todos);
 	return (
 		<div className="App">
-			<div>Count: { context.state.count }</div>
-			<div>{ SimpleButton() }</div>
-			<div>{toDoInput()}</div>
+			<div>{toDoInput()}
+				<span>{SimpleButton()}</span>
+			</div>
 			<div>Input: { context.state.input }</div>
-			<div>Refresh ID: { context.state.refreshID }</div>
+			<div>ToDos: { context.state.todos.map(Todo) }</div>
 		</div>
 	);
 };
