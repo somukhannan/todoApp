@@ -31,6 +31,10 @@ const Todo = (todo) => {
 		<span>
 			{ text }
 		</span>
+		<span>
+			<button	onClick={ () => context.actions.toDoRemoval(todo) }>
+				X</button>
+		</span>
 	</div>;
 };
 

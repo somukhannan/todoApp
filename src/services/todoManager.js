@@ -15,9 +15,13 @@ const toggleTodo = (todos, data) => todos.map((todo) =>
 			completed: !data.completed,
 		}));
 
+const toDoRemoval = (todos, todo) => todos.filter((current) =>
+	current.id !== todo.id);
+
 const TargetManager = {
 	toggleTodo,
 	addToDo,
+	toDoRemoval,
 };
 
 export default TargetManager;
