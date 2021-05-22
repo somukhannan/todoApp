@@ -12,10 +12,15 @@ const toggleTodo = ({ state }, todo) => ({
 	todos: TargetManager.toggleTodo(state.todos, todo),
 });
 
+const toDoRemoval = ({ state }, todo) => ({
+	todos: TargetManager.toDoRemoval(state.todos, todo),
+});
+
 const actions = {
 	setInput,
 	addToDo,
 	toggleTodo,
+	toDoRemoval,
 };
 
 export default actions;
