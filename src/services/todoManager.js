@@ -1,6 +1,11 @@
-// import { React } from 'react';
-// import context from '../core/context';
-// import { rndString } from '@laufire/utils/random';
+import { rndString } from '@laufire/utils/random';
+const randomStringLen = 8;
+
+const addToDo = (todos, input) => todos.concat({
+	text: input,
+	id: rndString(randomStringLen),
+	completed: false,
+});
 
 const toggleTodo = (todos, data) => todos.map((todo) =>
 	(todo.id !== data.id
@@ -12,6 +17,7 @@ const toggleTodo = (todos, data) => todos.map((todo) =>
 
 const TargetManager = {
 	toggleTodo,
+	addToDo,
 };
 
 export default TargetManager;

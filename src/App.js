@@ -2,8 +2,8 @@ import { React, useEffect } from 'react';
 import './App.css';
 import context from './core/context';
 import SampleService from './services/sample';
-import SimpleButton from './components/simpleButton';
-import toDoInput from './components/toDoInput.js';
+import AddButton from './components/AddButton';
+import toDoInput from './components/ToDoInput.js';
 import Todo from './components/Todo.js';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<div>{toDoInput()}
-				<span>{SimpleButton()}</span>
+				<span>{AddButton()}</span>
 			</div>
 			<div>Input: { context.state.input }</div>
 			<div>ToDos: { context.state.todos.map(Todo) }</div>
