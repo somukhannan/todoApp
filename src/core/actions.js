@@ -1,5 +1,7 @@
-const addToDo = ({ state }, input) => ({
-	todos: state.todos.concat({ text: input, id: Date.now() }),
+import context from '../core/context';
+
+const addToDo = ({ state }) => ({
+	todos: state.todos.concat({ text: context.state.input, id: Date.now() }),
 });
 
 const setInput = (dummy, input) => ({
