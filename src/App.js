@@ -3,8 +3,9 @@ import './App.css';
 import context from './core/context';
 import SampleService from './services/sample';
 import AddButton from './components/AddButton';
-import toDoInput from './components/ToDoInput.js';
+import toDoInput from './components/toDoInput.js';
 import Todo from './components/Todo.js';
+import toggleAll from './components/toggleAlltodos.js';
 
 const App = () => {
 	useEffect(SampleService.sayHai, []);
@@ -12,7 +13,9 @@ const App = () => {
 	console.log(context.state);
 	return (
 		<div className="App">
-			<div>{toDoInput()}
+			<div>
+				{toggleAll()}
+				{toDoInput()}
 				<span>{AddButton()}</span>
 			</div>
 			<div>Input: { context.state.input }</div>
