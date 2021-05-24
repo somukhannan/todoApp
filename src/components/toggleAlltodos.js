@@ -1,18 +1,20 @@
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { React } from 'react';
 import context from '../core/context';
-
-const getActiveChecked = (data) =>
-	data.filter((todo) => !todo.completed).length;
+import TargetManager from '../services/todoManager';
 
 const toggleAll = () => {
-	const ischecked = getActiveChecked(context.state.todos) === 0;
+	const isChecked = TargetManager.getActiveChecked(context.state.todos) === 0;
+	const noToDos = TargetManager.getActiveTodos(context.state.todos) === 0;
 
-	return <input
-		type="checkbox"
-		checked={ ischecked }
-		onChange={ () => context.actions.toggleAllTodos(!ischecked) }
-	       />;
+	return noToDos
+		? null
+		: <input
+			type="checkbox"
+			checked={ isChecked }
+			onChange={ () => context.actions.toggleAllTodos(!isChecked) }
+		  />;
 };
 
 export default toggleAll;

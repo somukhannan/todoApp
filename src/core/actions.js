@@ -16,8 +16,8 @@ const toDoRemoval = ({ state }, todo) => ({
 	todos: TargetManager.toDoRemoval(state.todos, todo),
 });
 
-const toggleAllTodos = ({ state }, ischecked) => ({
-	todos: TargetManager.toggleAllTodos(state.todos, ischecked),
+const toggleAllTodos = ({ state }, isChecked) => ({
+	todos: TargetManager.toggleAllTodos(state.todos, isChecked),
 });
 
 const actions = {

@@ -21,11 +21,18 @@ const toDoRemoval = (todos, todo) => todos.filter((current) =>
 const toggleAllTodos = (todos, ischecked) =>
 	todos.map((todo) => ({ ...todo, completed: ischecked }));
 
+const getActiveChecked = (data) =>
+	data.filter((todo) => !todo.completed).length;
+
+const getActiveTodos = (data) => data.length;
+
 const TargetManager = {
 	toggleTodo,
 	addToDo,
 	toDoRemoval,
 	toggleAllTodos,
+	getActiveChecked,
+	getActiveTodos,
 };
 
 export default TargetManager;
