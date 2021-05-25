@@ -6,6 +6,7 @@ import AddButton from './components/AddButton';
 import toDoInput from './components/toDoInput.js';
 import Todo from './components/Todo.js';
 import toggleAll from './components/toggleAlltodos.js';
+import clearCompleted from './components/clearCompleted.js';
 
 const App = () => {
 	useEffect(SampleService.sayHai, []);
@@ -18,8 +19,8 @@ const App = () => {
 				{toDoInput()}
 				<span>{AddButton()}</span>
 			</div>
-			<div>Input: { context.state.input }</div>
 			<div>ToDos: { context.state.todos.map(Todo) }</div>
+			<div>{ clearCompleted() }</div>
 		</div>
 	);
 };

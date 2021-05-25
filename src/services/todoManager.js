@@ -26,13 +26,16 @@ const getActiveChecked = (data) =>
 
 const getActiveTodos = (data) => data.length;
 
-const TargetManager = {
+const clearCompleted = (todos) => todos.filter((todo) => !todo.completed);
+
+const TodoManager = {
 	toggleTodo,
 	addToDo,
 	toDoRemoval,
 	toggleAllTodos,
 	getActiveChecked,
 	getActiveTodos,
+	clearCompleted,
 };
 
-export default TargetManager;
+export default TodoManager;

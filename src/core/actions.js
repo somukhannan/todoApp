@@ -1,7 +1,7 @@
-import TargetManager from '../services/todoManager';
+import TodoManager from '../services/todoManager';
 
 const addToDo = ({ state }) => ({
-	todos: TargetManager.addToDo(state.todos, state.input),
+	todos: TodoManager.addToDo(state.todos, state.input),
 });
 
 const setInput = (dummy, input) => ({
@@ -9,15 +9,19 @@ const setInput = (dummy, input) => ({
 });
 
 const toggleTodo = ({ state }, todo) => ({
-	todos: TargetManager.toggleTodo(state.todos, todo),
+	todos: TodoManager.toggleTodo(state.todos, todo),
 });
 
 const toDoRemoval = ({ state }, todo) => ({
-	todos: TargetManager.toDoRemoval(state.todos, todo),
+	todos: TodoManager.toDoRemoval(state.todos, todo),
 });
 
 const toggleAllTodos = ({ state }, isChecked) => ({
-	todos: TargetManager.toggleAllTodos(state.todos, isChecked),
+	todos: TodoManager.toggleAllTodos(state.todos, isChecked),
+});
+
+const clearCompleted = ({ state }) => ({
+	todos: TodoManager.clearCompleted(state.todos),
 });
 
 const actions = {
@@ -26,6 +30,7 @@ const actions = {
 	toggleTodo,
 	toDoRemoval,
 	toggleAllTodos,
+	clearCompleted,
 };
 
 export default actions;
