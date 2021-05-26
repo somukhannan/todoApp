@@ -24,6 +24,10 @@ const clearCompleted = ({ state }) => ({
 	todos: TodoManager.clearCompleted(state.todos),
 });
 
+const setFilter = (dummy, filter) => ({
+	filter,
+});
+
 const actions = {
 	setInput,
 	addToDo,
@@ -31,6 +35,7 @@ const actions = {
 	toDoRemoval,
 	toggleAllTodos,
 	clearCompleted,
+	setFilter,
 };
 
 export default actions;
