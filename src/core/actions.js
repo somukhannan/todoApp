@@ -1,7 +1,7 @@
 import TodoManager from '../services/todoManager';
 
-const addToDo = ({ state }) => ({
-	todos: TodoManager.addToDo(state.todos, state.input),
+const addTodo = ({ state }) => ({
+	todos: TodoManager.addTodo(state.todos, state.input),
 });
 
 const setInput = (dummy, input) => ({
@@ -12,8 +12,8 @@ const toggleTodo = ({ state }, todo) => ({
 	todos: TodoManager.toggleTodo(state.todos, todo),
 });
 
-const toDoRemoval = ({ state }, todo) => ({
-	todos: TodoManager.toDoRemoval(state.todos, todo),
+const removeTodo = ({ state }, todo) => ({
+	todos: TodoManager.removeTodo(state.todos, todo),
 });
 
 const toggleAllTodos = ({ state }, isChecked) => ({
@@ -30,9 +30,9 @@ const setFilter = (dummy, filter) => ({
 
 const actions = {
 	setInput,
-	addToDo,
+	addTodo,
 	toggleTodo,
-	toDoRemoval,
+	removeTodo,
 	toggleAllTodos,
 	clearCompleted,
 	setFilter,

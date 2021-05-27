@@ -1,7 +1,7 @@
 import { rndString } from '@laufire/utils/random';
 const randomStringLen = 8;
 
-const addToDo = (todos, input) => todos.concat({
+const addTodo = (todos, input) => todos.concat({
 	text: input,
 	id: rndString(randomStringLen),
 	completed: false,
@@ -15,20 +15,20 @@ const toggleTodo = (todos, data) => todos.map((todo) =>
 			completed: !data.completed,
 		}));
 
-const toDoRemoval = (todos, todo) => todos.filter((current) =>
+const removeTodo = (todos, todo) => todos.filter((current) =>
 	current.id !== todo.id);
 
 const toggleAllTodos = (todos, ischecked) =>
 	todos.map((todo) => ({ ...todo, completed: ischecked }));
 
-const getActiveChecked = (data) =>
+const getActiveCount = (data) =>
 	data.filter((todo) => !todo.completed).length;
 
-const getActiveTodos = (data) => data.length;
+const getTodosCount = (data) => data.length;
 
 const clearCompleted = (todos) => todos.filter((todo) => !todo.completed);
 
-const clearCompletedCount = (todos) =>
+const getInactiveCount = (todos) =>
 	todos.filter((todo) => todo.completed).length;
 
 const filters = {
@@ -41,13 +41,13 @@ const setFilter = (todos, filter) => todos.filter(filters[filter]);
 
 const TodoManager = {
 	toggleTodo,
-	addToDo,
-	toDoRemoval,
+	addTodo,
+	removeTodo,
 	toggleAllTodos,
-	getActiveChecked,
-	getActiveTodos,
+	getActiveCount,
+	getTodosCount,
 	clearCompleted,
-	clearCompletedCount,
+	getInactiveCount,
 	setFilter,
 };
 
