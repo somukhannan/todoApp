@@ -5,10 +5,10 @@ import context from '../core/context';
 import TargetManager from '../services/todoManager';
 
 const toggleAll = () => {
-	const isChecked = TargetManager.getActiveChecked(context.state.todos) === 0;
-	const noToDos = TargetManager.getActiveTodos(context.state.todos) === 0;
+	const isChecked = TargetManager.getActiveCount(context.state.todos) === 0;
+	const isTodos = TargetManager.getTodosCount(context.state.todos) === 0;
 
-	return noToDos
+	return isTodos
 		? null
 		: <input
 			type="checkbox"
