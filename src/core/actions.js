@@ -1,6 +1,7 @@
 import TodoManager from '../services/todoManager';
 
 const addTodo = ({ state }) => ({
+	input: '',
 	todos: TodoManager.addTodo(state.todos, state.input),
 });
 
