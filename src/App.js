@@ -8,6 +8,7 @@ import todoList from './components/todoList.js';
 import toggleAll from './components/toggleAlltodos.js';
 import clearCompleted from './components/clearCompleted.js';
 import filterBar from './components/filterBar.js';
+import editButton from './components/editButton.js';
 
 const App = () => {
 	useEffect(SampleService.sayHai, []);
@@ -19,6 +20,7 @@ const App = () => {
 				{toggleAll()}
 				{todoInput()}
 				<span>{AddButton()}</span>
+				<span>{editButton()}</span>
 			</div>
 			<div>Todos: {todoList() }</div>
 			<div>{ clearCompleted() }</div>
