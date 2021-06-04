@@ -28,7 +28,7 @@ const Todo = (todo) => {
 				onChange={ () => context.actions.toggleTodo(todo) }
 			/>
 		</span>
-		<span>
+		<span onClick={ () => context.actions.setEditing(todo) }>
 			{ text }
 		</span>
 		<span>

@@ -29,6 +29,18 @@ const setFilter = (dummy, filter) => ({
 	filter,
 });
 
+const editTodo = ({ state }) => ({
+	input: '',
+	editing: null,
+	// eslint-disable-next-line function-paren-newline
+	todos: TodoManager.editTodo(state.todos, state.editing, state.input),
+});
+
+const setEditing = (dummy, todo) => ({
+	editing: todo,
+	input: todo.text,
+});
+
 const actions = {
 	setInput,
 	addTodo,
@@ -37,6 +49,8 @@ const actions = {
 	toggleAllTodos,
 	clearCompleted,
 	setFilter,
+	editTodo,
+	setEditing,
 };
 
 export default actions;

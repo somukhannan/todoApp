@@ -5,6 +5,7 @@ const seed = {
 	todos: [],
 	count: config.countStart,
 	filter: 'All',
+	editing: null,
 };
 
 export default seed;
