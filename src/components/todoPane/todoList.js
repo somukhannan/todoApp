@@ -1,5 +1,5 @@
-import context from '../core/context';
-import TodoManager from '../services/todoManager';
+import context from '../../core/context';
+import TodoManager from '../../services/todoManager';
 import todo from './todo.js';
 
 const todoList = () => {

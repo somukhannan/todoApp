@@ -1,6 +1,6 @@
 import { React } from 'react';
-import context from '../core/context';
-import todoManager from '../services/todoManager.js';
+import context from '../../core/context';
+import todoManager from '../../services/todoManager.js';
 
 const clearCompleted = () => {
 	const isCompleted
