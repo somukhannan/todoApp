@@ -1,4 +1,4 @@
-import context from '../core/context';
+import context from '../../core/context';
 import addButton from './addButton.js';
 import editButton from './editButton.js';
 
