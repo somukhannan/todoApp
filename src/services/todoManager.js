@@ -1,10 +1,10 @@
 /* eslint-disable function-paren-newline */
 import { rndString } from '@laufire/utils/random';
-const randomStringLen = 8;
+import context from '../core/context';
 
 const addTodo = (todos, input) => todos.concat({
 	text: input,
-	id: rndString(randomStringLen),
+	id: rndString(context.config.idLength),
 	completed: false,
 });
 
