@@ -6,6 +6,7 @@ const seed = {
 	count: config.countStart,
 	filter: 'All',
 	editing: null,
+	tasks: [],
 };
 
 export default seed;
