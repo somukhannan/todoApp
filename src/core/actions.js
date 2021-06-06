@@ -41,6 +41,10 @@ const setEditing = (dummy, todo) => ({
 	input: todo.text,
 });
 
+const setTask = (dummy, tasks) => ({
+	tasks,
+});
+
 const actions = {
 	setInput,
 	addTodo,
@@ -51,6 +55,7 @@ const actions = {
 	setFilter,
 	editTodo,
 	setEditing,
+	setTask,
 };
 
 export default actions;
