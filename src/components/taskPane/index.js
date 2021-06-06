@@ -1,4 +1,5 @@
 import { React } from 'react';
+import TaskList from './taskList';
 
 const style = {
 	position: 'absolute',
@@ -10,6 +11,9 @@ const style = {
 };
 
 const TaskPane = () =>
-<div style={style}> Task </div>;
+<div style={style}>
+	<h3>Task</h3>
+	{TaskList()}
+	</div>;
 
 export default TaskPane;
