@@ -6,17 +6,21 @@ const getTask = (text) => ({
 	text: text,
 });
 
-const init = () => context.actions.setTask([
-	getTask('Task1'),
-	getTask('Task2'),
-	getTask('Task3'),
-]);
+const init = () => {
+	context.actions.addTask('Task1');
+	context.actions.addTask('Task2');
+	context.actions.addTask('Task3');
+};
 
 const removeTask = (tasks, data) => tasks.filter((task) => task.id !== data.id);
+
+const addTask = (tasks, task) =>
+	(task === '' ? tasks : tasks.concat(getTask(task)));
 
 const taskManager = () => ({
 	init,
 	removeTask,
+	addTask,
 });
 
 const TaskManager = taskManager();
