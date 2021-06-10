@@ -14,8 +14,7 @@ const init = () => {
 
 const removeTask = (tasks, data) => tasks.filter((task) => task.id !== data.id);
 
-const addTask = (tasks, task) =>
-	(task === '' ? tasks : tasks.concat(getTask(task)));
+const addTask = (tasks, task) => tasks.concat(getTask(task));
 
 const taskManager = () => ({
 	init,
