@@ -1,26 +1,12 @@
 import { React } from 'react';
 import context from '../../core/context';
 
-const sharedStyle = {
-	height: '1em',
-};
-
-const completedStyle = {
-	...sharedStyle,
-	color: 'grey',
-};
-
-const activeStyle = {
-	...sharedStyle,
-	color: 'black',
-};
-
 const Todo = (todo) => {
 	const { text, id, completed } = todo;
 
-	const style = completed ? completedStyle : activeStyle;
+	const className = `todo ${ completed ? 'todo-completed' : 'todo-active' }` ;
 
-	return <div key={ id } style={ style }>
+	return <div key={ id } className={ className }>
 		<span>
 			<input
 				type="checkbox"
