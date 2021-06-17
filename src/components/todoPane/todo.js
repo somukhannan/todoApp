@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { React } from 'react';
 import context from '../../core/context';
 
@@ -18,7 +19,10 @@ const Todo = (todo) => {
 			{ text }
 		</span>
 		<span>
-			<button	onClick={ () => context.actions.removeTodo(todo) }>
+			<button
+				className="closeButton"
+				onClick={ () => context.actions.removeTodo(todo) }
+			>
 				X</button>
 		</span>
 	</div>;

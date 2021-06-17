@@ -9,15 +9,31 @@
 .todo {
 	height: 1em;
 }
+.filterBar {
+	background-color: gray;
+}
+.filterBar button:hover {
+	background-color: yellow;
+}
 
 .filterButton-default {
-	background-color: green;
-	border-radius: 10px;
+	background-color: lightgreen;
+	border-radius: 5px;
 }
 
 .filterButton-selected {
-	background-color:red;
-	border-radius: 10px;
+	background-color:rgba(0, 128, 0, 0.767);
+	border-radius: 5px;
+}
+button:hover {
+	background-color:lightcoral;
+}
+button {
+	background-color: lightskyblue;
+	border-radius: 3px;
+}
+.closeButton {
+	background-color: red ;
 }
 
 .todoPane {

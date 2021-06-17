@@ -2,7 +2,10 @@ import context from '../../core/context';
 import { React } from 'react';
 
 const removeButton = (task) =>
-	<button onClick={ () => context.actions.removeTask(task) }>X</button>;
+	<button
+		className="closeButton"
+		onClick={ () => context.actions.removeTask(task) }
+	>X</button>;
 
 const addButton = (task) =>
 	<button onClick={ () => {
