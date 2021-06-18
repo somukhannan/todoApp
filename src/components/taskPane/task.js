@@ -17,10 +17,10 @@ const addButton = (task) =>
 const Task = (task) => {
 	const { id, text } = task;
 
-	return <div key={ id }>
+	return <div key={ id } className="taskAlignment">
 		<span>{addButton(task)}</span>
-		<span>{text}</span>
 		<span>{removeButton(task)}</span>
+		<span>{text}</span>
 	</div>;
 };
 

@@ -9,9 +9,15 @@
 .todo {
 	height: 1em;
 }
+
 .filterBar {
-	background-color: gray;
+	background-color: #61dafb;
+	position: absolute;
+	left: 260px;
+	border-radius: 20px;
+	transform: scale(1.2) translate(-1px, 0px);
 }
+
 .filterBar button:hover {
 	background-color: yellow;
 }
@@ -19,18 +25,21 @@
 .filterButton-default {
 	background-color: lightgreen;
 	border-radius: 5px;
+	transform: translate(-1px, 0px);
 }
 
 .filterButton-selected {
 	background-color:rgba(0, 128, 0, 0.767);
 	border-radius: 5px;
+	transform: translate(-1px, 0px);
 }
 button:hover {
-	background-color:lightcoral;
+	background-color:;
 }
 button {
-	background-color: lightskyblue;
-	border-radius: 3px;
+	background-color: green;
+	border-radius: 8px;
+	color: yellow;
 }
 .closeButton {
 	background-color: red ;
@@ -42,7 +51,12 @@ button {
 	left: 0;
 	height: 100%;
 	width: 50%;
-	background: beige;
+	background:rgb(243, 144, 52);
+}
+.taskAlignment {
+	text-align: left;
+	padding: 5px;
+	padding-left: 25%;
 }
 
 .taskPane {
@@ -51,7 +65,7 @@ button {
 	right: 0;
 	height: 100%;
 	width: 50%;
-	background: bisque;
+	background: rgb(185, 69, 1);
 }
 
 .App {
