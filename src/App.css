@@ -1,10 +1,10 @@
 .todo-completed {
 	color: grey;
-};
+}
 
 .todo-active {
 	color: black;
-};
+}
 
 .todo {
 	height: 1em;
@@ -34,12 +34,14 @@
 	transform: translate(-1px, 0px);
 }
 button:hover {
-	background-color:;
+	background-color: rgb(255, 255, 255);
+	color: black;
 }
 button {
 	background-color: green;
 	border-radius: 8px;
 	color: yellow;
+	margin: 5px;
 }
 .closeButton {
 	background-color: red ;
@@ -53,7 +55,7 @@ button {
 	width: 50%;
 	background:rgb(243, 144, 52);
 }
-.taskAlignment {
+.task {
 	text-align: left;
 	padding: 5px;
 	padding-left: 25%;

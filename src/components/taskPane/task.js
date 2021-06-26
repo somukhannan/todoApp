@@ -17,7 +17,7 @@ const addButton = (task) =>
 const Task = (task) => {
 	const { id, text } = task;
 
-	return <div key={ id } className="taskAlignment">
+	return <div key={ id } className="task">
 		<span>{addButton(task)}</span>
 		<span>{removeButton(task)}</span>
 		<span>{text}</span>
