@@ -8,7 +8,7 @@ import actionButton from './actionButton.js';
 const TodoPane = () => {
 
 	return (
-	<div className='todoPane'>
+	<div className='pane todoPane'>
 		<div>
 			{toggleAll()}
 			{todoInput()}

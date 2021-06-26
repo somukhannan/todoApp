@@ -7,7 +7,7 @@
 }
 
 .todo {
-	height: 1em;
+	height: 500px;
 }
 
 .filterBar {
@@ -46,7 +46,9 @@ button {
 .closeButton {
 	background-color: red ;
 }
-
+.pane {
+	overflow: auto;
+}
 .todoPane {
 	position: absolute;
 	top: 0;
@@ -56,6 +58,7 @@ button {
 	background:rgb(243, 144, 52);
 }
 .task {
+	height: 500px;
 	text-align: left;
 	padding: 5px;
 	padding-left: 25%;
