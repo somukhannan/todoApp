@@ -43,6 +43,9 @@ button {
 	color: yellow;
 	margin: 5px;
 }
+.setFontSize {
+	font-size: 10;
+}
 .closeButton {
 	background-color: red ;
 }
