@@ -23,6 +23,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
+    "test-dev": "react-scripts test --watchAll=false",
+    "test-ci": "npm run test-dev -- --coverage",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
