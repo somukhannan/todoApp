@@ -3,7 +3,7 @@
 import TaskManager from './taskManager';
 
 describe('ToDo TaskManager', () => {
-	const { addTask, removeTask } = TaskManager;
+	const { addTask, removeTask, init } = TaskManager;
 
 	test('Check Returning the Tasks', () => {
 		const tasks = [{ id: 'string', text: 'Sub' }];
@@ -25,4 +25,9 @@ describe('ToDo TaskManager', () => {
 
 		expect(result).toMatchObject(tasksToRetain);
 	});
+
+	// test('init task', () => {
+	// 	const result = init();
+	// 	expect(result).toHaveBeenCalled();
+	// });
 });
