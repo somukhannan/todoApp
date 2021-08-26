@@ -1,3 +1,4 @@
+/* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
 import TodoManager from './todoManager';
 import * as random from '@laufire/utils/random';
@@ -11,7 +12,9 @@ describe('TodoManager Test Suite', () => {
 		getActiveCount,
 		getTodosCount,
 		clearCompleted,
-		getInactiveCount } = TodoManager;
+		getInactiveCount,
+		setFilter,
+		editTodo } = TodoManager;
 
 	test('Check Returning the Todo', () => {
 		const todos = [];
@@ -68,7 +71,7 @@ describe('TodoManager Test Suite', () => {
 		const result = toggleAllTodos(todos, true);
 
 		expect(result).toHaveLength(3);
-		result.map((data) => expect(data.completed).toBeTruthy());
+		result.forEach((data) => expect(data.completed).toBeTruthy());
 	});
 
 	test('getActiveCount service Check', () => {
@@ -105,5 +108,56 @@ describe('TodoManager Test Suite', () => {
 		const result = getInactiveCount(todos);
 
 		expect(result).toBe(1);
+	});
+
+	test('setFilter service filter All Check', () => {
+		const todos = [{ Id: 'dsfsdf', text: 'goto', completed: false },
+			{ Id: 'dds3r', text: 'nrfdg', completed: true },
+			{ Id: 'dsdff', text: 'htr', completed: false }];
+		const result = setFilter(todos, 'All');
+
+		expect(result).toMatchObject(todos);
+	});
+
+	test('setFilter service filter Active Check', () => {
+		const active = [{ Id: 'dsfsdf', text: 'goto', completed: false },
+			{ Id: 'dsdff', text: 'htr', completed: false }];
+		const completed = { Id: 'dds3r', text: 'nrfdg', completed: true };
+		const todos = [...active, completed];
+		const result = setFilter(todos, 'Active');
+
+		expect(result).toMatchObject(active);
+	});
+
+	test('setFilter service filter Completed Check', () => {
+		const active = [{ Id: 'dsfsdf', text: 'goto', completed: false },
+			{ Id: 'dsdff', text: 'htr', completed: false }];
+		const completed = { Id: 'dds3r', text: 'nrfdg', completed: true };
+		const todos = [...active, completed];
+		const result = setFilter(todos, 'Completed');
+
+		expect(result).toMatchObject([completed]);
+	});
+
+	test('setFilter service filter Completed Check', () => {
+		const active = [{ Id: 'dsfsdf', text: 'goto', completed: false },
+			{ Id: 'dsdff', text: 'htr', completed: false }];
+		const completed = { Id: 'dds3r', text: 'nrfdg', completed: true };
+		const todos = [...active, completed];
+		const result = setFilter(todos, 'Completed');
+
+		expect(result).toMatchObject([completed]);
+	});
+
+	test.only('setFilter service filter Completed Check', () => {
+		const active = [{ Id: 'dsfsdf', text: 'goto', completed: false },
+			{ Id: 'dsdff', text: 'htr', completed: false }];
+		const editing = { Id: 'dds3r', text: 'nrfdg', completed: true };
+		const todos = [...active, editing];
+		const result = editTodo(
+			todos, editing, 'Changed'
+		);
+
+		expect(result[2].text).toBe('Changed');
 	});
 });
