@@ -6,7 +6,7 @@ const AddButton = () =>
 	<button
 		Role="AddButton"
 		className="AddButton"
-		disabled={ todoManager.isInput() }
+		disabled={ todoManager.isInput(context.state.input) }
 		onClick={ () => context.actions.addTodo() }
 	>
 		Add</button>;

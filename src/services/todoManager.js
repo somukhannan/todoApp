@@ -48,7 +48,7 @@ const editTodo = (todos, editing, text) => todos.map((todo) =>
 			text,
 		}));
 
-const isInput = () => context.state.input === '';
+const isInput = (input) => input === '';
 
 const TodoManager = {
 	toggleTodo,
