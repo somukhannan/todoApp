@@ -48,6 +48,8 @@ const editTodo = (todos, editing, text) => todos.map((todo) =>
 			text,
 		}));
 
+const isInput = () => context.state.input === '';
+
 const TodoManager = {
 	toggleTodo,
 	addTodo,
@@ -59,6 +61,7 @@ const TodoManager = {
 	getInactiveCount,
 	setFilter,
 	editTodo,
+	isInput,
 };
 
 export default TodoManager;
