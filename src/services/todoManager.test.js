@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 /* eslint-disable max-statements */
 /* eslint-disable max-lines-per-function */
 import TodoManager from './todoManager';
@@ -14,7 +15,8 @@ describe('TodoManager Test Suite', () => {
 		clearCompleted,
 		getInactiveCount,
 		setFilter,
-		editTodo } = TodoManager;
+		editTodo,
+		isInput } = TodoManager;
 
 	test('Check Returning the Todo', () => {
 		const todos = [];
@@ -149,7 +151,7 @@ describe('TodoManager Test Suite', () => {
 		expect(result).toMatchObject([completed]);
 	});
 
-	test.only('setFilter service filter Completed Check', () => {
+	test('setFilter service filter Completed Check', () => {
 		const active = [{ Id: 'dsfsdf', text: 'goto', completed: false },
 			{ Id: 'dsdff', text: 'htr', completed: false }];
 		const editing = { Id: 'dds3r', text: 'nrfdg', completed: true };
@@ -159,5 +161,19 @@ describe('TodoManager Test Suite', () => {
 		);
 
 		expect(result[2].text).toBe('Changed');
+	});
+
+	describe('isInput service Check', () => {
+		test('isInput Check true case', () => {
+			const result = isInput('');
+
+			expect(result).toBeTruthy();
+		});
+
+		test('isInput Check false case', () => {
+			const result = isInput('string');
+
+			expect(result).toBeFalsy();
+		});
 	});
 });
