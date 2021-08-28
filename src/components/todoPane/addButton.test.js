@@ -1,6 +1,8 @@
+/* eslint-disable max-lines-per-function */
 import AddButton from './addButton';
 import context from '../../core/context';
 import { render, fireEvent } from '@testing-library/react';
+import TodoManager from '../../services/todoManager';
 
 jest.mock('../../core/context', () => ({
 	state: { input: Symbol('input') },
@@ -23,5 +25,23 @@ describe('AddButton Component Check', () => {
 
 		expect(actions.addTodo)
 			.toHaveBeenCalledWith();
+	});
+
+	describe('disbaled Check', () => {
+		test('disabled Check false Case', () => {
+			jest.spyOn(TodoManager, 'isInput').mockReturnValue(true);
+
+			const component = render(AddButton()).getByRole('AddButton');
+
+			expect(component).toBeDisabled();
+		});
+
+		test('disabled Check true case', () => {
+			jest.spyOn(TodoManager, 'isInput').mockReturnValue(false);
+
+			const component = render(AddButton()).getByRole('AddButton');
+
+			expect(component).not.toBeDisabled();
+		});
 	});
 });
