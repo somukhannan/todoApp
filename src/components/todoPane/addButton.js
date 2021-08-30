@@ -4,7 +4,7 @@ import todoManager from '../../services/todoManager.js';
 
 const AddButton = () =>
 	<button
-		Role="AddButton"
+		role="AddButton"
 		className="AddButton"
 		disabled={ todoManager.isInput(context.state.input) }
 		onClick={ () => context.actions.addTodo() }

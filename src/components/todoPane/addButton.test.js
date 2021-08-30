@@ -12,19 +12,20 @@ jest.mock('../../core/context', () => ({
 describe('AddButton Component Check', () => {
 	const { actions } = context;
 
-	test('addbutton Check', () => {
+	test('addbutton is in DOM Check', () => {
 		const component = render(AddButton()).getByRole('AddButton');
 
 		expect(component).toBeInTheDocument();
 	});
 
-	test('addbutton Check', () => {
+	test('do addbutton work', () => {
+		jest.spyOn(TodoManager, 'isInput').mockReturnValue(false);
+
 		const component = render(AddButton()).getByRole('AddButton');
 
 		fireEvent.click(component);
 
-		expect(actions.addTodo)
-			.toHaveBeenCalledWith();
+		expect(actions.addTodo).toHaveBeenCalledWith();
 	});
 
 	describe('disbaled Check', () => {
