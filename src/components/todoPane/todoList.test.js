@@ -9,7 +9,7 @@ jest.mock('../../core/context', () => ({
 }));
 
 describe('todoList check', () => {
-	test('todolist', () => {
+	test('todolist filter check', () => {
 		const { todos, filter } = context.state;
 		const mockTodo = [Symbol('a')];
 		const returnvalue = Symbol('returnvalue');
