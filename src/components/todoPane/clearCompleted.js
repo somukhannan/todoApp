@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { React } from 'react';
 import context from '../../core/context';
 import todoManager from '../../services/todoManager.js';
@@ -8,7 +9,7 @@ const clearCompleted = () => {
 
 	return isCompleted
 		? null
-		: <button onClick={ () => context.actions.clearCompleted() }>
+		: <button role="ClearButton" onClick={ () => context.actions.clearCompleted() }>
 			clear completed</button>;
 };
 
