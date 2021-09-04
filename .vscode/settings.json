@@ -3,5 +3,9 @@
         "action",
         "enterkey",
         "get"
+    ],
+    "cSpell.words": [
+        "retunvalue",
+        "returnvalue"
     ]
 }
