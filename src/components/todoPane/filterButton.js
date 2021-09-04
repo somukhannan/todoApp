@@ -8,7 +8,7 @@ const filterButton = (filter) => {
 
 	return isTodos
 		? null
-		: <span>
+		: <span key={ filter }>
 			<button
 				className={ className }
 				onClick={ () => context.actions.setFilter(filter) }
